@@ -5,6 +5,8 @@ const int BOOT_DELAY_MS = 4000;     // delay after plug-in before starting
 const int AFTER_NOTEPAD_MS = 1500;  // wait for Notepad/PowerShell to open fully
 const int CHAR_DELAY_MS = 14;       // delay between characters
 const int LINE_DELAY_MS = 220;      // pause after each line (optional, handled in typeSlow)
+const int UAC_DELAY_MS = 1500;      // delay for UAC dialog to appear
+const int UAC_KEY_DELAY_MS = 100;   // delay between UAC key presses
 
 void typeSlow(const char *s) {
   for (size_t i = 0; s[i] != '\0'; ++i) {
@@ -18,11 +20,21 @@ void typeSlow(const char *s) {
   }
 }
 
+void handleUAC() {
+  delay(UAC_DELAY_MS);  // Wait for UAC dialog
+  Keyboard.write(KEY_TAB);
+  delay(UAC_KEY_DELAY_MS);
+  Keyboard.write(KEY_TAB);
+  delay(UAC_KEY_DELAY_MS);
+  Keyboard.write(KEY_RETURN);
+  delay(500);  // Brief pause after confirmation for window to focus
+}
+
 void setup() {
   delay(BOOT_DELAY_MS);
   Keyboard.begin();
 
-   // Open Run dialog (Win+R)
+  // Open Run dialog (Win+R)
   Keyboard.press(KEY_LEFT_GUI);
   Keyboard.press('r');
   Keyboard.releaseAll();
@@ -63,12 +75,13 @@ void setup() {
   Keyboard.write(KEY_DELETE);
   delay(50);
 
-  // Launch PowerShell (or change to "notepad")
+  // Launch PowerShell as admin
   Keyboard.print("powershell");
   Keyboard.press(KEY_LEFT_CTRL);
   Keyboard.press(KEY_LEFT_SHIFT);
   Keyboard.press(KEY_RETURN);
   Keyboard.releaseAll();
+  handleUAC();
 
   delay(AFTER_NOTEPAD_MS);         // ensure window is ready
 
@@ -122,12 +135,13 @@ void setup() {
   Keyboard.write(KEY_DELETE);
   delay(50);
 
-  // Launch PowerShell (or change to "notepad")
+  // Launch PowerShell as admin
   Keyboard.print("powershell");
   Keyboard.press(KEY_LEFT_CTRL);
   Keyboard.press(KEY_LEFT_SHIFT);
   Keyboard.press(KEY_RETURN);
   Keyboard.releaseAll();
+  handleUAC();
 
   delay(AFTER_NOTEPAD_MS);         // ensure window is ready
 
