@@ -43,3 +43,5 @@ $multipart.Dispose()
 $client.Dispose()
 $handler.Dispose()
 $ms.Dispose()
+
+# Prepared with care by Christian Taylor, Joshua Macian, and Benjamin Petrini, with the assistance of ChatGPT and Grok
