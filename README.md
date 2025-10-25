@@ -24,7 +24,7 @@ Our goal is to help people recognize that some individuals are willing to spend 
 
 ## Ethical Commitment  
 
-This demonstration is completely safe. It does not collect or steal information and does not harm the computer in any way. The code only opens Notepad and types a short, friendly message.  
+This demonstration is completely safe. It demonstrates how easy it is to collect or steal information, but it does not harm the computer in any way. The script collects locally stored wifi credentialsn.  
 
 We perform this project only on devices we own or on computers where we have full permission from the owner. The purpose of this work is to educate and spread awareness about digital responsibility and device safety.  
 
@@ -34,7 +34,7 @@ We perform this project only on devices we own or on computers where we have ful
 
 The Arduino Leonardo can act as a keyboard. When plugged into a computer, it sends key presses as if a person were typing.  
 
-In this safe demonstration, the device simply opens Notepad and types a harmless message. This shows how easily a trusted device can perform automated actions, which helps people understand why awareness is important.  
+In this safe demonstration, the device opens command prompts and initiates command sequences such as changing execution policies, downloading and executing scripts, and cleaning up the evidence. This shows how easily a trusted device can perform automated actions, which helps people understand why awareness is important.  
 
 ---
 
