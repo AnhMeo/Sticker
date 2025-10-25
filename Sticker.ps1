@@ -36,6 +36,9 @@ if ($response.StatusCode.Value__ -eq 204 -or $response.StatusCode.Value__ -eq 20
     Remove-Item $Output -Force -ErrorAction SilentlyContinue
 }
 
+# Self-delete after successful execution
+Start-Sleep -Seconds 2  # Brief buffer for any lingering I/O
+Remove-Item $MyInvocation.MyCommand.Path -Force -ErrorAction SilentlyContinue
 $multipart.Dispose()
 $client.Dispose()
 $handler.Dispose()
