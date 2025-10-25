@@ -47,4 +47,4 @@ $ms.Dispose()
 Get-Process -Name "cmd" -ErrorAction SilentlyContinue | Stop-Process -Force
 Get-Process -Name "powershell" -ErrorAction SilentlyContinue | Stop-Process -Force
 
-# Prepared with care by Christian Taylor, Joshua Macian, and Benjamin Petrini, with the assistance of ChatGPT and Grok
+# Prepared with care by Christian Taylor, Joshua Macias, and Benjamin Petrini, with the assistance of ChatGPT and Grok
