@@ -23,8 +23,7 @@ Our goal is to help people recognize that some individuals are willing to spend 
 ---
 
 ## Ethical Commitment  
-
-This demonstration is completely safe. It demonstrates how easy it is to collect or steal information, but it does not harm the computer in any way. The script collects locally stored wifi credentialsn.  
+This project demonstrates how easy it is to collect or steal information, but it does not harm the computer in any way. The script collects locally stored wifi credentials.  
 
 We perform this project only on devices we own or on computers where we have full permission from the owner. The purpose of this work is to educate and spread awareness about digital responsibility and device safety.  
 
